@@ -1,20 +1,20 @@
-id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
-1,Sunrise City,Neon Echo,pop,happy,0.82,118,0.84,0.79,0.18
-2,Midnight Coding,LoRoom,lofi,chill,0.42,78,0.56,0.62,0.71
-3,Storm Runner,Voltline,rock,intense,0.91,152,0.48,0.66,0.10
-4,Library Rain,Paper Lanterns,lofi,chill,0.35,72,0.60,0.58,0.86
-5,Gym Hero,Max Pulse,pop,intense,0.93,132,0.77,0.88,0.05
-6,Spacewalk Thoughts,Orbit Bloom,ambient,chill,0.28,60,0.65,0.41,0.92
-7,Coffee Shop Stories,Slow Stereo,jazz,relaxed,0.37,90,0.71,0.54,0.89
-8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
-9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
-10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
-11,Concrete Crown,Verse Cartel,hip hop,confident,0.78,94,0.62,0.86,0.12
-12,Moonlit Sonata Remix,Elena Voss,classical,peaceful,0.18,66,0.58,0.22,0.97
-13,Dusty Porch Light,Hollow Creek,country,nostalgic,0.48,102,0.64,0.57,0.81
-14,Iron Requiem,Black Anvil,metal,angry,0.97,168,0.22,0.52,0.04
-15,Island Breeze,Sol Roots,reggae,uplifting,0.58,84,0.88,0.84,0.40
-16,Velvet Hours,Amara Lux,r&b,romantic,0.52,96,0.69,0.75,0.33
-17,Neon Pulse Festival,Circuit Bloom,edm,euphoric,0.95,128,0.90,0.91,0.03
-18,Autumn Letters,Willow & Pine,folk,melancholic,0.31,88,0.29,0.38,0.93
-19,Blue Monday Rain,Delta Smoke,blues,sad,0.39,72,0.24,0.46,0.74
+id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness,language,release_decade,vocals,popularity,best_activity
+1,Sunrise City,Neon Echo,pop,happy,0.82,118,0.84,0.79,0.18,english,2020,vocal,85,commute
+2,Midnight Coding,LoRoom,lofi,chill,0.42,78,0.56,0.62,0.71,none,2020,instrumental,55,study
+3,Storm Runner,Voltline,rock,intense,0.91,152,0.48,0.66,0.10,english,2000,vocal,70,workout
+4,Library Rain,Paper Lanterns,lofi,chill,0.35,72,0.60,0.58,0.86,none,2020,instrumental,48,study
+5,Gym Hero,Max Pulse,pop,intense,0.93,132,0.77,0.88,0.05,english,2010,vocal,90,workout
+6,Spacewalk Thoughts,Orbit Bloom,ambient,chill,0.28,60,0.65,0.41,0.92,none,2010,instrumental,35,sleep
+7,Coffee Shop Stories,Slow Stereo,jazz,relaxed,0.37,90,0.71,0.54,0.89,english,1990,vocal,52,study
+8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22,none,2010,instrumental,62,commute
+9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78,none,2020,instrumental,58,study
+10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35,english,2010,vocal,66,party
+11,Concrete Crown,Verse Cartel,hip hop,confident,0.78,94,0.62,0.86,0.12,english,2010,vocal,74,workout
+12,Moonlit Sonata Remix,Elena Voss,classical,peaceful,0.18,66,0.58,0.22,0.97,none,2020,instrumental,40,sleep
+13,Dusty Porch Light,Hollow Creek,country,nostalgic,0.48,102,0.64,0.57,0.81,english,1990,vocal,45,commute
+14,Iron Requiem,Black Anvil,metal,angry,0.97,168,0.22,0.52,0.04,english,1980,vocal,50,workout
+15,Island Breeze,Sol Roots,reggae,uplifting,0.58,84,0.88,0.84,0.40,spanish,1990,vocal,68,party
+16,Velvet Hours,Amara Lux,r&b,romantic,0.52,96,0.69,0.75,0.33,french,2000,vocal,72,sleep
+17,Neon Pulse Festival,Circuit Bloom,edm,euphoric,0.95,128,0.90,0.91,0.03,korean,2020,vocal,88,party
+18,Autumn Letters,Willow & Pine,folk,melancholic,0.31,88,0.29,0.38,0.93,english,2000,vocal,38,sleep
+19,Blue Monday Rain,Delta Smoke,blues,sad,0.39,72,0.24,0.46,0.74,english,1980,vocal,42,commute

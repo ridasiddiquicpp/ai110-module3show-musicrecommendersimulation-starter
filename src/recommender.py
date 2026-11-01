@@ -62,6 +62,11 @@ def load_songs(csv_path: str) -> List[Dict]:
                 "valence": float(row["valence"]),
                 "danceability": float(row["danceability"]),
                 "acousticness": float(row["acousticness"]),
+                "language": row["language"],
+                "release_decade": int(row["release_decade"]),
+                "vocals": row["vocals"],
+                "popularity": int(row["popularity"]),
+                "best_activity": row["best_activity"],
             })
     return songs
 
@@ -90,6 +95,34 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
     acoustic_points = 0.5 * (1 -abs(song["acousticness"] - user_prefs["target_acousticness"]))
     score += acoustic_points
     reasons.append(f"acousticness {song['acousticness']} vs target {user_prefs['target_acousticness']} +{acoustic_points:.2f}")
+
+    # New attributes: each one only counts when the user profile includes that preference,
+    # so profiles written before these features existed still score the same as before.
+    if "favorite_language" in user_prefs and song["language"] == user_prefs["favorite_language"]:
+        score += 1.0
+        reasons.append(f"language match ({song['language']}) +1.0")
+
+    if "favorite_decade" in user_prefs:
+        decade_gap = abs(song["release_decade"] - user_prefs["favorite_decade"])
+        if decade_gap == 0:
+            score += 0.5
+            reasons.append(f"decade match ({song['release_decade']}s) +0.5")
+        elif decade_gap == 10:
+            score += 0.25
+            reasons.append(f"adjacent decade ({song['release_decade']}s) +0.25")
+
+    if "preferred_vocals" in user_prefs and song["vocals"] == user_prefs["preferred_vocals"]:
+        score += 0.5
+        reasons.append(f"vocals match ({song['vocals']}) +0.5")
+
+    if "target_popularity" in user_prefs:
+        popularity_points = 0.5 * (1 - abs(song["popularity"] - user_prefs["target_popularity"]) / 100)
+        score += popularity_points
+        reasons.append(f"popularity {song['popularity']} vs target {user_prefs['target_popularity']} +{popularity_points:.2f}")
+
+    if "favorite_activity" in user_prefs and song["best_activity"] == user_prefs["favorite_activity"]:
+        score += 1.0
+        reasons.append(f"activity match ({song['best_activity']}) +1.0")
 
     return score, reasons
 
