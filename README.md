@@ -29,6 +29,19 @@ Some prompts to answer:
 
 You can include a simple diagram or bullet list if helpful.
 
+Algorithm Recipe:
+  +2.0  if genre matches the user's favorite_genre
+  +1.0  if mood matches the user's favorite_mood
+  +2.0 × (1 − |song.energy − target_energy|)   ← closer energy = more points
+  +1.0 × (1 − |song.valence − target_valence|)
+  +0.5 × (1 − |song.acousticness − target_acousticness|)
+  
+
+Then: sort all songs by score, highest first, and return the top k.
+
+...............................................
+
+potential biases are...
 ---
 
 ## Getting Started
@@ -71,12 +84,51 @@ You can add more tests in `tests/test_recommender.py`.
 Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
 
 ```
-# e.g.:
-# User profile: genre=indie, mood=chill, energy=low
-# Recommendations:
-#   1. ...
-#   2. ...
-#   3. ...
+Loaded songs: 19
+
+Top 5 recommendations
+============================================================
+
+#1  Sunrise City by Neon Echo
+    Score: 5.56 / 6.50 (86%)
+    Reasons:
+      - genre match (pop) +2.0
+      - mood match (happy) +1.0
+      - energy 0.82 vs target 0.8 +1.96
+      - valence 0.84 vs target 0.2 +0.36
+      - acousticness 0.18 vs target 0.7 +0.24
+
+#2  Gym Hero by Max Pulse
+    Score: 4.34 / 6.50 (67%)
+    Reasons:
+      - genre match (pop) +2.0
+      - energy 0.93 vs target 0.8 +1.74
+      - valence 0.77 vs target 0.2 +0.43
+      - acousticness 0.05 vs target 0.7 +0.18
+
+#3  Rooftop Lights by Indigo Parade
+    Score: 3.63 / 6.50 (56%)
+    Reasons:
+      - mood match (happy) +1.0
+      - energy 0.76 vs target 0.8 +1.92
+      - valence 0.81 vs target 0.2 +0.39
+      - acousticness 0.35 vs target 0.7 +0.33
+
+#4  Night Drive Loop by Neon Echo
+    Score: 2.87 / 6.50 (44%)
+    Reasons:
+      - energy 0.75 vs target 0.8 +1.90
+      - valence 0.49 vs target 0.2 +0.71
+      - acousticness 0.22 vs target 0.7 +0.26
+
+#5  Iron Requiem by Black Anvil
+    Score: 2.81 / 6.50 (43%)
+    Reasons:
+      - energy 0.97 vs target 0.8 +1.66
+      - valence 0.22 vs target 0.2 +0.98
+      - acousticness 0.04 vs target 0.7 +0.17
+
+============================================================
 ```
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
