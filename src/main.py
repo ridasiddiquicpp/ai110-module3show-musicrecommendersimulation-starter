@@ -18,9 +18,16 @@ def main() -> None:
 
 
     # Starter example profile
-    user_prefs = {"favorite_genre": "pop", "favorite_mood": "happy", "target_energy": 0.8, "target_valence": 0.2,"target_acousticness": 0.7}
-    #user_prefs = {"favorite_genre": "classical", "favorite_mood": "melancholic", "target_energy": 0.2, "target_valence": 0.2,"target_acousticness": 0.7}
+    #user_prefs = {"favorite_genre": "pop", "favorite_mood": "happy", "target_energy": 0.8, "target_valence": 0.2,"target_acousticness": 0.7}
 
+    #1
+    #user_prefs = {"favorite_genre": "classical", "favorite_mood": "melancholic", "target_energy": 0.2, "target_valence": 0.2,"target_acousticness": 0.7}
+    
+    #2 - genre and mood match different songs
+    user_prefs = {"favorite_genre": "classical", "favorite_mood": "angry", "target_energy": 0.97, "target_valence": 0.2, "target_acousticness": 0.04}
+    
+    #3 - contradictory vibe
+    #user_prefs = {"favorite_genre": "metal", "favorite_mood": "peaceful", "target_energy": 0.95, "target_valence": 0.9, "target_acousticness": 0.95}
 
     recommendations = recommend_songs(user_prefs, songs, k=5)
 

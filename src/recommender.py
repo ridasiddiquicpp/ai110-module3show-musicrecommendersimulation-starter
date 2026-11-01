@@ -79,15 +79,15 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
         score += 1.0
         reasons.append(f"mood match ({song['mood']}) +1.0")
 
-    energy_points = 2.0 * (1 - abs(song["energy"] - user_prefs["target_energy"]))
+    energy_points = 2.0 * (1 -abs(song["energy"] - user_prefs["target_energy"]))
     score += energy_points
     reasons.append(f"energy {song['energy']} vs target {user_prefs['target_energy']} +{energy_points:.2f}")
 
-    valence_points = 1.0 * (1 - abs(song["valence"] - user_prefs["target_valence"]))
+    valence_points = 1.0 * (1 -abs(song["valence"] - user_prefs["target_valence"]))
     score += valence_points
     reasons.append(f"valence {song['valence']} vs target {user_prefs['target_valence']} +{valence_points:.2f}")
 
-    acoustic_points = 0.5 * (1 - abs(song["acousticness"] - user_prefs["target_acousticness"]))
+    acoustic_points = 0.5 * (1 -abs(song["acousticness"] - user_prefs["target_acousticness"]))
     score += acoustic_points
     reasons.append(f"acousticness {song['acousticness']} vs target {user_prefs['target_acousticness']} +{acoustic_points:.2f}")
 
